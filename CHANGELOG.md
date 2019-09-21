@@ -38,6 +38,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
   when they are empty.
 - Remove deprecated attribute "type" from some "<script>" tags in templates.
 - Add missing attribute "alt" on some "<img>" tags in templates.
+- Fix invalid syntax in "srcset" attribute value on "<img>" tags.
 
 ### Removed
 
