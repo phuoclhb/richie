@@ -39,6 +39,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Remove deprecated attribute "type" from some "<script>" tags in templates.
 - Add missing attribute "alt" on some "<img>" tags in templates.
 - Fix invalid syntax in "srcset" attribute value on "<img>" tags.
+- Add url escaping on variables inside links from on social network badges.
 
 ### Removed
 
