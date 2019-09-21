@@ -36,6 +36,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Fix add plugin to team and organization on fragment_course_content template
   when they are empty.
+- Remove deprecated attribute "type" from some "<script>" tags.
 
 ### Removed
 
