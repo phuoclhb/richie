@@ -43,6 +43,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Fix invalid syntax in "sizes" attribute value on "<img>" tags.
 - Fix invalid attributes on "iframe" tag from djangocms_video plugin.
 - Fix invalid "button" tag inside a "a" tag inside course glimpse.
+- Fix invalid "role" value on pagination list with a "nav" tag around bullet
+  list instead.
 
 ### Removed
 
