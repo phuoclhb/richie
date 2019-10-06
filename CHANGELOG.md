@@ -42,6 +42,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Add url escaping on variables inside links on social network badges.
 - Fix invalid syntax in "sizes" attribute value on "<img>" tags.
 - Fix invalid attributes on "iframe" tag from djangocms_video plugin.
+- Fix invalid "button" tag inside a "a" tag inside course glimpse.
 
 ### Removed
 
