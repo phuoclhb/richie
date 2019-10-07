@@ -398,6 +398,48 @@ class Course(BasePageExtension):
 
         return course_runs
 
+    def get_course_runs_active(self):
+        """
+        Return active course_runs.
+        0: a run is on-going and open for enrollment > "closing on": {enrollment_end}
+        """
+        course_runs = self.get_course_runs_for_language()
+        now = datetime.now()
+        # Filter for course runs that are active
+        return course_runs.filter(start__lt=now, end__gt=now, enrollment_end__gt=now)
+
+    def get_course_runs_upcoming(self):
+        """
+        Return upcoming course_runs.
+        1: a run is future and open for enrollment > "starting on": {start}
+        2: a run is future and not yet open for enrollment > "starting on": {start}
+        """
+        course_runs = self.get_course_runs_for_language()
+        now = datetime.now()
+        # Filter for course runs that are active
+        return course_runs.filter(start__gt=now, enrollment_end__gt=now)
+
+    def get_course_runs_ongoing(self):
+        """
+        Return on-going course_runs.
+        3: a run is future and no more open for enrollment > "closed": {None}
+        4: a run is on-going but closed for enrollment > "ongoing": {None}
+        """
+        course_runs = self.get_course_runs_for_language()
+        now = datetime.now()
+        # Filter for course runs that are active
+        return course_runs.filter(end__gt=now, enrollment_end__lte=now)
+
+    def get_course_runs_archived(self):
+        """
+        Return archived course_runs.
+        5: there's a finished run in the past > "archived": {None}
+        """
+        course_runs = self.get_course_runs_for_language()
+        now = datetime.now()
+        # Filter for course runs that are archived
+        return course_runs.filter(end__lte=now)
+
     @property
     def state(self):
         """
