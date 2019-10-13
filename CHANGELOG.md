@@ -8,6 +8,11 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix React pagination role-element pair. Pagination should now be seen as a
+  navigational element by screen readers.
+
 ## [1.11.0] - 2019-10-11
 
 ### Added
